@@ -1,7 +1,7 @@
 import sqlite3
 from fpdf import FPDF # generate pdf files with python
 
-con = sqlite3.conect('database.db')
+con = sqlite3.connect('database.db')
 cur = con.cursor()
 
 
@@ -19,7 +19,7 @@ for column in columns:
 pdf.ln()
 
 
-cur.execute("SELECT * FROM 'IPS' ")
+cur.execute("SELECT * FROM 'ips' ")
 rows=cur.fetchall()
 for row in rows:
     for element in row:
